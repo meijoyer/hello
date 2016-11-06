@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>time-color</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+	body{position: relative;
+		background-image: url(image/20120609123400_fWPzV.jpg);}
+	#circle{width: 300px;
+		height: 300px;
+		border: black solid;
+		border-radius: 150px 150px 150px 150px;
+		position: absolute;
+		left: 300px;
+		top: 100px;
+	}
+	</style>
+</head>
+<body onload="startTime()">
+<div id="circle">
+<input></input>
+</div>
+<script type="text/javascript">
+function startTime()
+{
+var today=new Date()
+var h=today.getHours()
+var m=today.getMinutes()
+var s=today.getSeconds()
+if(h<10)h="0"+h;
+if(m<10)h="0"+m;
+if(s<10)h="0"+s;
+document.getElementById("circle").innerHTML=h+":"+m+":"+s;
+t=setTimeout('startTime()',500);
+var bg=document.getElementById("circle");
+    bg.style.background="rgb("+h+","+m+","+s+")";
+};
+</script>
+</body>
+</html>
